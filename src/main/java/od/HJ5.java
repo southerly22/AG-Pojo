@@ -1,13 +1,12 @@
 package od;
 
+import java.util.Scanner;
+// 十六进制 转十进制
 public class HJ5 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        // 注意 hasNext 和 hasNextLine 的区别
-        while (in.hasNextInt()) { // 注意 while 处理多个 case
-            int a = in.nextInt();
-            int b = in.nextInt();
-            System.out.println(a + b);
-        }
+        String str = in.next().substring(2);
+        int aa = Integer.parseInt(str, 16);
+        System.out.println(aa);
     }
 }

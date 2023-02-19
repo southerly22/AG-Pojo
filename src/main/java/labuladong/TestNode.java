@@ -1,4 +1,4 @@
-package od;
+package labuladong;
 
 import lzx.ListNode;
 
@@ -10,13 +10,13 @@ import lzx.ListNode;
  **/
 public class TestNode {
     public static void main(String[] args) {
-        int[] a = {1,4,3,2,5,2};
-        ListNode dummy = createLinkList(a);
-        //输出
-        while (dummy!=null){
-            System.out.println("dummy.val = " + dummy.val);
-            dummy = dummy.next;
-        }
+        //int[] a = {1,4,3,2,5,2};
+        //ListNode dummy = createLinkList(a);
+        ////输出
+        //while (dummy!=null){
+        //    System.out.println("dummy.val = " + dummy.val);
+        //    dummy = dummy.next;
+        //}
     }
 
     public static ListNode createLinkList(int[] a){

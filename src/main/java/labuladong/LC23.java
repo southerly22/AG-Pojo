@@ -1,4 +1,4 @@
-package od;
+package labuladong;
 
 import lzx.ListNode;
 
@@ -15,6 +15,8 @@ public class LC23 {
 
     }
     public static ListNode mergeKLists(ListNode[] lists) {
+        if (lists.length == 0) return null;
+
         ListNode dummy = new ListNode(-1);
         ListNode p = dummy;
 
@@ -29,7 +31,7 @@ public class LC23 {
             //弹出并删除
             ListNode head = pq.poll();
             p.next = head;
-            if (head !=null){ //如果当前链表还有值 继续加入堆里面进行比较
+            if (head.next!=null){ //如果当前链表还有值 继续加入堆里面进行比较
                 pq.add(head.next);
             }
             p = p.next;

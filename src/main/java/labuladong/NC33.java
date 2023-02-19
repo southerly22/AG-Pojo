@@ -1,4 +1,4 @@
-package od;
+package labuladong;
 
 import lzx.ListNode;
 // 合并两个有序链表

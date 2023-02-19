@@ -1,4 +1,4 @@
-package od;
+package labuladong;
 
 import java.util.Scanner;
 // 十六进制 转十进制

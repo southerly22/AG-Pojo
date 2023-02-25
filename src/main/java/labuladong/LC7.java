@@ -1,35 +1,48 @@
 package labuladong;
 
+import java.util.Arrays;
+import java.util.Stack;
+
 /**
+ * 整数反转
+ *
  * @author lzx
- * @date 2023/2/21 11:53
- * @description: TODO 整数反转
- */
+ * @date 2023/02/20 21:53
+ **/
 public class LC7 {
     public static void main(String[] args) {
-        int a = 0;
-        System.out.println(reverse(a));
-        System.out.println(reverse2(a));
-        // int b = 123;
+        int a = 1234;
 
+        String lzx = new StringBuffer("lzx").reverse().toString();
+        System.out.println(lzx);
+
+        Stack<Integer> integerStack = new Stack<>();
+        integerStack.push(1);
+        integerStack.push(2);
+        System.out.println(integerStack.pop());
+
+        StringBuilder stringBuilder = new StringBuilder();
+        stringBuilder.append(2);
+        stringBuilder.append(3);
+        System.out.println(Integer.parseInt(stringBuilder.toString()));
+
+        //int[] transfer = transfer(a);
+        //System.out.println(Arrays.toString(transfer));
     }
-    // 字符串 解法执【行耗时:2 ms,击败了16.86% 的Java用户】
+    public static int[] transfer(int a){
+        String str = null;
+        str = Integer.toString(a);
+        int[] res = new int[str.length()];
+
+        for (int i = 0; i < str.length(); i++) {
+            char c = str.charAt(i);
+            String s = String.valueOf(c);
+            res[i] = Integer.parseInt(s);
+        }
+        return res;
+    }
+    //方法2：取余数。时间复杂度最低
     public static int reverse(int x) {
-        long res = 0L;
-        if (x > 0) {
-            StringBuilder s1 = new StringBuilder(String.valueOf(x));
-            res = Long.parseLong(s1.reverse().toString());
-        }
-        if(x < 0) {
-            StringBuilder s1 = new StringBuilder(String.valueOf(x));
-            res = Long.parseLong(s1.replace(0, 1, "").reverse().toString()) * (-1);
-        }
-        if (res > Integer.MAX_VALUE || res < Integer.MIN_VALUE)
-            return 0;
-        else return (int) res;
-    }
-    // 余数 解法【推荐】
-    public static int reverse2(int x){
         long res = 0L;
         while (x != 0) {
             int tmp = x % 10;
@@ -40,8 +53,4 @@ public class LC7 {
             return 0;
         return (int) res;
     }
-
-
-
-
 }

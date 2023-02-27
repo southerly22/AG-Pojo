@@ -1,8 +1,8 @@
-package labuladong;
+package labuladong.dual_pointer;
 
 import lzx.ListNode;
 // 合并两个有序链表
-public class NC33 {
+public class LC21_NC33 {
     public ListNode mergeTwoList(ListNode l1,ListNode l2){
         //空结点
         ListNode p0 = new ListNode(-1);

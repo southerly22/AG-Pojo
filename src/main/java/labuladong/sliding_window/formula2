@@ -1,0 +1,39 @@
+### 滑动窗口解题套路
+
+### 注意 : 增加右窗口 和 缩减左窗口的逻辑对比
+
+void slidingWindow(string s) { 
+
+  HashMap<Character, Integer> window = new HashMap<>(); //储存窗口中的数据
+  HashMap<Character, Integer> need = new HashMap<>(); //储存需要的字符以及对应的数量
+
+  int left=0,right=0; //双指针
+  int count = 0;//记录当前窗口中符合need要求的字符数量，当count==need.size时即可收缩窗口
+
+  ### 增大窗口 [和减小窗口的逻辑正好相反]
+  while (right < s.size()) {
+        // c 是将移入窗口的字符
+        char c = s.charAt(right);
+        // 增大窗口
+        right++;
+        // 进行窗口内数据的一系列更新
+        window.put(c,window.getOrDefault(c,0) + 1);
+        ...
+
+
+
+   ### 减小窗口
+   while (window needs shrink) {
+        // d 是将移出窗口的字符
+        char d = s[left];
+        // 缩小窗口
+        left++;
+        // 进行窗口内数据的一系列更新
+        window.put(d,window.get(d) -1); //相反操作
+        ...
+     }
+  }
+
+
+
+

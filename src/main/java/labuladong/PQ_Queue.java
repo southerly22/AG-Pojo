@@ -18,7 +18,11 @@ public class PQ_Queue {
         numbers.add(1);
         System.out.println("PriorityQueue: " + numbers);
 
-        //TreeSet<Integer> treeSet = new TreeSet<>((a,b)->a.compareTo(b));
+        TreeSet<Integer> treeSet2 = new TreeSet<>((a,b)->a.compareTo(b));
+        treeSet2.add(4);
+        treeSet2.add(7);
+        treeSet2.add(2);
+        System.out.println("treeSet2 = " + treeSet2);
 
         // 大根堆
         TreeSet<Integer> treeSet = new TreeSet<>((a,b)->b.compareTo(a));

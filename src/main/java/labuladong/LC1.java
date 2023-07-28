@@ -14,8 +14,8 @@ import java.util.HashSet;
  **/
 public class LC1 {
     public static void main(String[] args) {
-        int[] a = {3,3};
-        int[] ints = twoSum(a, 9);
+        int[] a = {3,3,2,3,6};
+        int[] ints = twoSum2(a, 10);
         System.out.println(Arrays.toString(ints));
     }
 
@@ -33,4 +33,19 @@ public class LC1 {
         }
         return res;
     }
+
+    public static int[] twoSum2(int[] nums,int target){
+        int[] res = new int[2];
+        HashMap<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            if (map.containsKey(target - nums[i])){
+                res[0] = map.get(target - nums[i]);
+                res[1] = i;
+            }else {
+                map.put(nums[i],i);
+            }
+        }
+        return res;
+    }
+
 }

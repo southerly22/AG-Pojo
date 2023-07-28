@@ -7,16 +7,19 @@ import java.util.stream.Collectors;
  * @author lzx
  * @date 2023/7/19 16:45
  * @description: TODO
+ *      输入：nums = [4,3,2,7,8,2,3,1]
+ *      输出：[2,3]
  */
 public class LC442 {
     public static void main(String[] args) {
         int[] nums = {4, 3, 2, 7, 8, 2, 3, 1};
+        // int[] nums = {2, 3, 2};
         // 输出：[2,3]
 
-        // List<Integer> list = findDuplicates(nums);
-        // System.out.println(Arrays.toString(list.toArray()));
-        List<Integer> list2 = findDuplicates2(nums);
-        System.out.println(Arrays.toString(list2.toArray()));
+        List<Integer> list = findDuplicates(nums);
+        System.out.println(Arrays.toString(list.toArray()));
+        // List<Integer> list2 = findDuplicates2(nums);
+        // System.out.println(Arrays.toString(list2.toArray()));
     }
 
     // 原地hash
@@ -31,6 +34,7 @@ public class LC442 {
         for (int i = 0; i < nums.length; i++) {
             while (nums[i] != nums[nums[i] - 1]) {
                 swap(nums, i, nums[i] - 1);
+                System.out.println("交换后："+i+"，"+Arrays.toString(nums));
             }
         }
         // 取值
@@ -55,9 +59,9 @@ public class LC442 {
             int num = nums[i];
             int index = Math.abs(num) -1;
             if (nums[index] > 0){
-                nums[index] = -nums[i];
+                nums[index] = -nums[index];
             }else {
-                list.add(index);
+                list.add(index + 1);
             }
         }
         return list;
@@ -71,4 +75,5 @@ public class LC442 {
         }
         return new ArrayList<>(hashSet);
     }
+
 }
